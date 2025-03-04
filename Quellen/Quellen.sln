@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desktopanwendung", "Desktop
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mobilanwendung", "Mobilanwendung\Mobilanwendung.csproj", "{D3A1B552-939E-4BD9-9B7F-65BBC064F7F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testanwendung", "Testanwendung\Testanwendung.csproj", "{8B720C89-5BC1-4A85-A6DE-75C72A6C4152}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testanwendung", "Testanwendung\Testanwendung.csproj", "{8B720C89-5BC1-4A85-A6DE-75C72A6C4152}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTTP-Client", "HTTP-Client\HTTP-Client.csproj", "{50DFB55B-EA3C-43B3-8D38-A045B60A2A3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{8B720C89-5BC1-4A85-A6DE-75C72A6C4152}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B720C89-5BC1-4A85-A6DE-75C72A6C4152}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B720C89-5BC1-4A85-A6DE-75C72A6C4152}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50DFB55B-EA3C-43B3-8D38-A045B60A2A3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50DFB55B-EA3C-43B3-8D38-A045B60A2A3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50DFB55B-EA3C-43B3-8D38-A045B60A2A3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50DFB55B-EA3C-43B3-8D38-A045B60A2A3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
