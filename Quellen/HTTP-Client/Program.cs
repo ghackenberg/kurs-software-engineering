@@ -2,11 +2,6 @@
 
 namespace HTTP_Client
 {
-    public class ResponseBodyDocument
-    {
-        public Dictionary<string, string[]>? message { get; set; }
-        public string? status { get; set; }
-    }
 
     internal class Program
     {
@@ -19,8 +14,11 @@ namespace HTTP_Client
         {
             var client = new HttpClient();
 
+            // URL definieren
+            var url = "https://dog.ceo/api/breeds/list/all";
+
             // HTTP Anfrage senden und Antwort empfangen
-            var response = await client.GetAsync("https://dog.ceo/api/breeds/list/all");
+            var response = await client.GetAsync(url);
 
             // Status-Code der Antwort prüfen
             response.EnsureSuccessStatusCode();
@@ -49,6 +47,12 @@ namespace HTTP_Client
                     Console.WriteLine($"  {subitem.GetString()}");
                 }
             }
+        }
+
+        class ResponseBodyDocument
+        {
+            public Dictionary<string, string[]>? message { get; set; }
+            public string? status { get; set; }
         }
 
         static void ProcessSchemaExplicit(string body)
