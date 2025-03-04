@@ -15,19 +15,19 @@ namespace HTTP_Client
             // Part 2: Images
 
             GetImage().Wait();
-            ListImages(3).Wait();
+            ListImagesLimit(3).Wait();
 
             // Part 3: Breed images
 
             GetBreedImage("hound").Wait();
             ListBreedImages("hound").Wait();
-            ListBreedImages("hound", 3).Wait();
+            ListBreedImagesLimit("hound", 3).Wait();
 
             // Part 4: Sub-breed images
 
             GetSubBreedImage("hound", "afghan").Wait();
             ListSubBreedImages("hound", "afghan").Wait();
-            ListSubBreedImages("hound", "afghan", 3).Wait();
+            ListSubBreedImagesLimit("hound", "afghan", 3).Wait();
         }
 
         // Part 1: Breeds and sub-breeds
@@ -120,9 +120,9 @@ namespace HTTP_Client
 
         #endregion
 
-        #region ListImages
+        #region ListImagesLimit
 
-        static async Task ListImages(int count)
+        static async Task ListImagesLimit(int count)
         {
             throw new NotImplementedException();
         }
@@ -149,9 +149,9 @@ namespace HTTP_Client
 
         #endregion
 
-        #region ListBreedImages
+        #region ListBreedImagesLimit
 
-        static async Task ListBreedImages(string breed, int count)
+        static async Task ListBreedImagesLimit(string breed, int count)
         {
             throw new NotImplementedException();
         }
@@ -178,9 +178,9 @@ namespace HTTP_Client
 
         #endregion
 
-        #region ListSubBreedImages
+        #region ListSubBreedImagesLimit
 
-        static async Task ListSubBreedImages(string breed, string subBreed, int count)
+        static async Task ListSubBreedImagesLimit(string breed, string subBreed, int count)
         {
             throw new NotImplementedException();
         }
