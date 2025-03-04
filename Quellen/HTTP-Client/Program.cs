@@ -59,15 +59,23 @@ namespace HTTP_Client
         {
             // Body-Zeichenkette in C#-Objekt konvertieren
             var document = JsonDocument.Parse(body);
+
+            // Wurzelelement des JSON-Dokuments auslesen
             var root = document.RootElement;
+
+            // Kindelement des Wurzelelements auslesen
             var message = root.GetProperty("message");
 
-            // Body-Inhalte auf der Konsole ausgeben
+            // Hunderassen verarbeiten
             foreach (var item in message.EnumerateObject())
             {
+                // Name der Hunderasse ausgeben
                 Console.WriteLine(item.Name);
+
+                // Hundeunterrassen verarbeiten
                 foreach (var subitem in item.Value.EnumerateArray())
                 {
+                    // Name der Hundeunterrasse ausgeben
                     Console.WriteLine($"  {subitem.GetString()}");
                 }
             }
@@ -84,14 +92,19 @@ namespace HTTP_Client
             // Body-Zeichenkette in C#-Objekt konvertieren
             var document = JsonSerializer.Deserialize<ListBreedsResponse>(body);
 
-            // Body-Inhalte auf der Konsole ausgeben
+            // Ergebnis prüfen
             if (document?.message != null)
             {
+                // Hunderassen verarbeiten
                 foreach (var item in document.message)
                 {
+                    // Name der Hunderasse ausgeben
                     Console.WriteLine(item.Key);
+
+                    // Hundeunterrassen verarbeiten
                     foreach (var subitem in item.Value)
                     {
+                        // Name der Hundeunterrasse ausgeben
                         Console.WriteLine($"  {subitem}");
                     }
                 }
