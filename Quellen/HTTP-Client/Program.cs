@@ -7,10 +7,34 @@ namespace HTTP_Client
     {
         static void Main(string[] args)
         {
-            Run().Wait();
+            // Part 1: Breeds and sub-breeds
+
+            ListBreeds().Wait();
+            ListSubBreeds("hound").Wait();
+
+            // Part 2: Images
+
+            GetImage().Wait();
+            ListImages(3).Wait();
+
+            // Part 3: Breed images
+
+            GetBreedImage("hound").Wait();
+            ListBreedImages("hound").Wait();
+            ListBreedImages("hound", 3).Wait();
+
+            // Part 4: Sub-breed images
+
+            GetSubBreedImage("hound", "afghan").Wait();
+            ListSubBreedImages("hound", "afghan").Wait();
+            ListSubBreedImages("hound", "afghan", 3).Wait();
         }
 
-        static async Task Run()
+        // Part 1: Breeds and sub-breeds
+
+        #region ListBreeds
+
+        static async Task ListBreeds()
         {
             var client = new HttpClient();
 
@@ -27,11 +51,11 @@ namespace HTTP_Client
             var body = await response.Content.ReadAsStringAsync();
 
             // Body verarbeiten
-            ProcessSchemaImplicit(body);
-            ProcessSchemaExplicit(body);
+            ProcessListBreedsResponseImplicit(body);
+            ProcessListBreedsResponseExplicit(body);
         }
 
-        static void ProcessSchemaImplicit(string body)
+        static void ProcessListBreedsResponseImplicit(string body)
         {
             // Body-Zeichenkette in C#-Objekt konvertieren
             var document = JsonDocument.Parse(body);
@@ -49,16 +73,16 @@ namespace HTTP_Client
             }
         }
 
-        class ResponseBodyDocument
+        class ListBreedsResponse
         {
             public Dictionary<string, string[]>? message { get; set; }
             public string? status { get; set; }
         }
 
-        static void ProcessSchemaExplicit(string body)
+        static void ProcessListBreedsResponseExplicit(string body)
         {
             // Body-Zeichenkette in C#-Objekt konvertieren
-            var document = JsonSerializer.Deserialize<ResponseBodyDocument>(body);
+            var document = JsonSerializer.Deserialize<ListBreedsResponse>(body);
 
             // Body-Inhalte auf der Konsole ausgeben
             if (document?.message != null)
@@ -73,5 +97,95 @@ namespace HTTP_Client
                 }
             }
         }
+
+        #endregion
+
+        #region ListSubBreeds
+
+        static async Task ListSubBreeds(string breed)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        // Part 2: Images
+
+        #region GetImage
+
+        static async Task GetImage()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        #region ListImages
+
+        static async Task ListImages(int count)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        // Part 3: Breed images
+
+        #region GetBreedImage
+
+        static async Task GetBreedImage(string breed)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        #region ListBreedImages
+
+        static async Task ListBreedImages(string breed)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        #region ListBreedImages
+
+        static async Task ListBreedImages(string breed, int count)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        // Part 4: Sub-breed images
+
+        #region GetSubBreedImage
+
+        static async Task GetSubBreedImage(string breed, string subBreed)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        #region ListSubBreedImages
+
+        static async Task ListSubBreedImages(string breed, string subBreed)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        #region ListSubBreedImages
+
+        static async Task ListSubBreedImages(string breed, string subBreed, int count)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
     }
 }
