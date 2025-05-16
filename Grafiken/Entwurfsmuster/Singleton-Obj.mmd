@@ -1,0 +1,19 @@
+flowchart TB
+
+    N1["<b>N1 : Nutzer</b><hr/>..."]
+    N2["<b>N2 : Nutzer</b><hr/>..."]
+    N3["<b>N3 : Nutzer</b><hr/>..."]
+
+    S["<b>S : Singleton</b><hr/>Instanz = ...<hr/>Dienst()"]
+
+    S --<b>Schritt 1</b><br/>Instanz = new Singleton()--> S
+
+    N1 --<b>Schritt 2</b><br/>Instanz.Dienst()--> S
+    N2 --<b>Schritt 3</b><br/>Instanz.Dienst()--> S
+    N3 --<b>Schritt 4</b><br/>Instanz.Dienst()--> S
+
+    style S fill:orange,stroke:red
+
+    style N1 fill:lightgreen,stroke:green
+    style N2 fill:lightgreen,stroke:green
+    style N3 fill:lightgreen,stroke:green

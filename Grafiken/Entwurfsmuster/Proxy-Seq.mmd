@@ -1,0 +1,33 @@
+sequenceDiagram
+
+    participant Nutzer
+    participant Proxy
+    participant Implementierung
+
+    Nutzer ->> Proxy: Dienst(a, b)
+
+    activate Nutzer
+    activate Proxy
+
+    Proxy ->> Proxy: Erzeuge HTTP Anfrage
+
+    Proxy ->> Implementierung: Sende HTTP Anfrage<br/>{ "A": a, "B": b }
+
+    activate Implementierung
+
+    Implementierung ->> Implementierung: Parse HTTP Anfrage
+
+    Implementierung ->> Implementierung: Berechne Ergebnis<br/>r = a + b
+
+    Implementierung ->> Implementierung: Erzeuge HTTP Antwort
+
+    Implementierung -->> Proxy: Sende HTTP Antwort<br/>{ "R": r }
+
+    deactivate Implementierung
+
+    Proxy ->> Proxy: Parse HTTP Antwort
+
+    Proxy -->> Nutzer: r
+
+    deactivate Proxy
+    deactivate Nutzer

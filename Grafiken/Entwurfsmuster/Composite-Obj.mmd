@@ -1,0 +1,22 @@
+flowchart TB
+
+    G1["<b>G1 : GruppenKnoten</b><hr/>Kinder = [ B1, G2 ]<hr/>ZähleKnoten() = 1 + 4 = 5"]
+
+    B1["<b>B1 : BlattKnoten</b><hr/>...<hr/>ZähleKnoten() = 1"]
+
+    G2["<b>G2 : GruppenKnoten</b><hr/>Kinder = [ B2, B3 ]<hr/>ZähleKnoten() = 1 + 2 = 3"]
+
+    B2["<b>B2 : BlattKnoten</b><hr/>...<hr/>ZähleKnoten() = 1"]
+    B3["<b>B3 : BlattKnoten</b><hr/>...<hr/>ZähleKnoten() = 1"]
+
+    G1 --> B1
+    G1 --> G2
+    G2 --> B2
+    G2 --> B3
+
+    style G1 fill:lightgreen,stroke:green
+    style G2 fill:lightgreen,stroke:green
+
+    style B1 fill:yellow,stroke:orange
+    style B2 fill:yellow,stroke:orange
+    style B3 fill:yellow,stroke:orange

@@ -1,0 +1,36 @@
+sequenceDiagram
+
+    participant Nutzer
+    participant Gegenstand
+    participant Beobachter
+
+    Nutzer ->> Gegenstand: Anmelden(Beobachter)
+
+    activate Nutzer
+    activate Gegenstand
+
+    Gegenstand ->> Gegenstand: Speichern
+    Gegenstand -->> Nutzer: OK
+
+    deactivate Gegenstand
+    
+    Nutzer ->> Gegenstand: Aktualisieren()
+
+    activate Gegenstand
+
+    Gegenstand ->> Beobachter: Benachrichtigen()
+
+    activate Beobachter
+
+    Beobachter ->> Beobachter: Verarbeiten
+
+    Beobachter -->> Gegenstand: OK
+
+    deactivate Beobachter
+
+    Gegenstand ->> Gegenstand: Weitere Beobachter benachrichtigen
+
+    Gegenstand -->> Nutzer: OK
+
+    deactivate Gegenstand
+    deactivate Nutzer

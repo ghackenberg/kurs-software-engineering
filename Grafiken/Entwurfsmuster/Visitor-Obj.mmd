@@ -1,0 +1,27 @@
+flowchart TB
+
+    Besucher["<b>Besucher</b><hr/>Besuche(Element element)<br/>Besuche(Gruppe gruppe)<br/>Besuche(Linie linie)<br/>Besuche(Kreis kreis)"]
+
+    subgraph Struktur
+        G1["<b>G1 : Gruppe</b><hr/>Kinder = [ L1, G2 ]"]
+        L1["<b>L1 : Linie</b><hr/>..."]
+        K1["<b>K1 : Kreis</b><hr/>..."]
+        G2["<b>G2 : Gruppe</b><hr/>Kinder = [ K1 ]"]
+    end
+
+    Besucher -.<b>Schritt 2</b><br/>Besuche(Linie linie).-> L1
+    Besucher -.<b>Schritt 1</b><br/>Besuche(Gruppe gruppe).-> G1
+    Besucher -.<b>Schritt 3</b><br/>Besuche(Gruppe gruppe).-> G2
+    Besucher -.<b>Schritt 4</b><br/>Besuche(Kreis kreis).-> K1
+
+    G1 --> L1
+    G1 --> G2
+    G2 --> K1
+
+    style Besucher fill:orange,stroke:red
+
+    style G1 fill:lightgreen,stroke:green
+    style G2 fill:lightgreen,stroke:green
+
+    style L1 fill:yellow,stroke:orange
+    style K1 fill:yellow,stroke:orange
