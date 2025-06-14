@@ -1,6 +1,4 @@
-﻿using Klassenbibliothek;
-using System.Net.NetworkInformation;
-
+﻿//using Klassenbibliothek;
 namespace Konsolenanwendung
 {
     public static class Programm
@@ -77,7 +75,8 @@ namespace Konsolenanwendung
 
             // Schleife mit vorheriger Prüfung der Bedingung
             var j = 0;
-            while (j < 10) {
+            while (j < 10)
+            {
                 j++;
             }
 
@@ -118,8 +117,8 @@ namespace Konsolenanwendung
             Division(o, 2);
 
             // Klasse Kunde instanziieren
-            var p = new Kunde("Max", "Muster", new DateTime(2010, 5, 15));
-            var q = new Kunde("Anna", "Muster", new DateTime(2015, 8, 21));
+            var p = new Klassenbibliothek.Kunde("Max", "Muster", new DateTime(2010, 5, 15));
+            var q = new Klassenbibliothek.Kunde("Anna", "Muster", new DateTime(2015, 8, 21));
 
             // Eigenschaften lesen
             Console.WriteLine($"{p.Vorname} {p.Nachname}");
