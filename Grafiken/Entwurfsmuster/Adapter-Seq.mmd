@@ -1,0 +1,50 @@
+sequenceDiagram
+
+    participant Nutzer
+    participant AdapterSumme
+    participant Addierer
+    participant AdapterProdukt
+    participant Multiplizierer
+
+    note over Nutzer,Addierer: Nutzung des Addierers
+
+    Nutzer ->> AdapterSumme: Dienst(a, b)
+
+    activate Nutzer
+    activate AdapterSumme
+    
+    AdapterSumme ->> Addierer: Addiere(a, b)
+
+    activate Addierer
+
+    Addierer ->> Addierer: Rechnen
+    
+    Addierer -->> AdapterSumme: r1 = a + b
+
+    deactivate Addierer
+
+    AdapterSumme -->> Nutzer: r1
+
+    deactivate AdapterSumme
+
+    note over Nutzer,Multiplizierer: Nutzung des Multiplizierers
+
+    Nutzer ->> AdapterProdukt: Dienst(a, b)
+
+    activate AdapterProdukt
+
+    AdapterProdukt ->> Multiplizierer: Multipliziere(a, b)
+
+    activate Multiplizierer
+
+    Multiplizierer ->> Multiplizierer: Rechnen
+
+    Multiplizierer -->> AdapterProdukt: r2 = a * b
+
+    deactivate Multiplizierer
+
+    AdapterProdukt -->> Nutzer: r2
+
+    deactivate AdapterProdukt
+
+    deactivate Nutzer
