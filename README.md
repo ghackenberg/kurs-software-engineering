@@ -2,7 +2,12 @@
 
 ## Entwurfsmuster
 
-*Kommt bald*
+* Singleton
+* Adapter
+* Proxy
+* Compsite
+* Observer
+* Visitor
 
 ## Architekturmuster
 
